@@ -2,8 +2,6 @@ FROM debian:wheezy
 
 MAINTAINER Vincent Chalamon <vincentchalamon@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
       git \
