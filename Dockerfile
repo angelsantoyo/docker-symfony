@@ -27,9 +27,8 @@ RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf \
     && echo "apc.enabled=1" >> /etc/php5/conf.d/20-apc.ini \
     && echo "apc.stat=1" >> /etc/php5/conf.d/20-apc.ini
 
-ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
-
-ADD vhost.conf /etc/nginx/sites-available/default
+COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+COPY vhost.conf /etc/nginx/sites-available/default
 
 RUN usermod -u 1000 www-data
 
